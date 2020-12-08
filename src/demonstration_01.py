@@ -13,6 +13,15 @@ Notes:
 - You may not use the same element twice.
 - You can return the answer in any order.
 """
-def two_sum(nums, target):
+def two_sum(nums, target): #o(n) x o(n) = o(n^2) - LINEAR
     # Your code here
+    for i in range(len(nums)): # o(n)
+        for j in range(i + 1, len(nums)): # o(n)
+            num1 = nums[i]
+            num2 = nums[j]
+            if num1 + num2 == target:
+                return [i, j]
+    
+    return None
 
+print(two_sum(nums = [2, 5, 9, 15], target = 7))
